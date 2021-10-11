@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from "react-router";
+import React, { Component, useState } from "react";
+import "./App.css";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Roadmap from "./pages/Roadmap";
+import { data } from "./constants/contants";
+
 
 function App() {
+  const [feedbacks, setFeedbacks] = useState(data.productRequests);
+  const increaseUpvotes = (id) => {
+  const selectedUpvotes = feedbacks.find((item) => {
+    if(item.id === id) {
+      return selectedUpvotes + 1
+    }
+  })
+  };
+
+  function filterItem(title) {
+    console.log(title);
+    if (title === "All") {
+      console.log(data.productRequests);
+      return setFeedbacks(data.productRequests);
+    }
+    const filteredFeedbacks = data.productRequests.filter(
+      (item) => item.category === title
+    );
+    return setFeedbacks(filteredFeedbacks);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route eRact path="/roadmap">
+        <Roadmap />
+      </Route>
+      <Route exact path="/login">
+        <Login />
+      </Route>
+      <Route exact path="/dashboard">
+        <Dashboard />
+      </Route>
+      <Route exact path="/">
+        <Home
+          filterItem={filterItem}
+          increaseUpvotes={increaseUpvotes}
+          feedbacks={feedbacks}
+        />
+      </Route>
+    </Switch>
   );
 }
 

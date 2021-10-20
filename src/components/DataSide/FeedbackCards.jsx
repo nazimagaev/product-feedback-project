@@ -5,7 +5,7 @@ import commentIcon from "../../assets/shared/icon-comments.svg";
 import { data } from "../../constants/contants";
 import { buttonData } from "../../constants/contants";
 
-const FeedbackCardsStyled = styled.div`
+export const FeedbackCardsStyled = styled.div`
   background: #ffffff;
   border-radius: 10px;
   width: 825px;

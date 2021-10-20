@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+/* .selected-card {
+  background: #5175ff;
+  background-image: url(../src/assets-20211003T170941Z-001/assets/home/bg-pattern-pricing.svg);
+
+} */

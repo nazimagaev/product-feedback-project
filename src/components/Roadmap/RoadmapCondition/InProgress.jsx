@@ -53,7 +53,7 @@ const PlannedCardStyled = styled.div`
   padding: 32px;
   background: #ffffff;
   border-radius: 5px;
-  border-top: 6px solid #ad1fea;
+  border-top: 6px solid ;
 `;
 
 const StatContainer = styled.div`
@@ -63,10 +63,12 @@ const StatContainer = styled.div`
 `;
 
 function Planned() {
+
+  
   return (
     <PlannedStyled>
-      <h2>In-Progress</h2>
-      <p>Currently being developed</p>
+      <h2></h2>
+      <p></p>
       <PlannedCardStyled>
         <h2>Planned</h2>
         <h3>More comprehensive reports</h3>

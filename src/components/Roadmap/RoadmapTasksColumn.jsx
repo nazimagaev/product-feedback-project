@@ -1,14 +1,9 @@
 import React from "react";
+import { Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
-import {
-  CommentContainer,
-  UpvotesContainer,
-} from "../../DataSide/FeedbackCards";
-import commentIcon from "../../../assets/shared/icon-comments.svg";
-import upArrow from "../../../assets/shared/icon-arrow-up.svg";
-import RoadmapCard from "../RoadmapCard";
+import RoadmapCard from "../../components/Roadmap/RoadmapCard";
 
-const PlannedStyled = styled.div`
+const TaksStyled = styled.div`
   h2 {
     font-style: normal;
     font-weight: bold;
@@ -48,14 +43,15 @@ const PlannedStyled = styled.div`
   }
 `;
 
-function Planned() {
+function RoadmapTasksColumn({ taskHeading, taskDesc, feedbacks, id }) {
   return (
-    <PlannedStyled>
-      <h2></h2>
-      <p></p>
-      <RoadmapCard />
-    </PlannedStyled>
+    <TaksStyled>
+      {feedbacks.map((feedback, index) => {
+        return <RoadmapCard key={feedback.id} index={index} {...feedback} />;
+      })}
+      {provided.placeholder}
+    </TaksStyled>
   );
 }
 
-export default Planned;
+export default RoadmapTasksColumn;

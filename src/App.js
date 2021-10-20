@@ -3,19 +3,18 @@ import React, { Component, useState } from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Comments from "./pages/Comments";
 import Roadmap from "./pages/Roadmap";
 import { data } from "./constants/contants";
 
-
-function App() {
+function App({ selected }) {
   const [feedbacks, setFeedbacks] = useState(data.productRequests);
   const increaseUpvotes = (id) => {
-  const selectedUpvotes = feedbacks.find((item) => {
-    if(item.id === id) {
-      return selectedUpvotes + 1
-    }
-  })
+    const selectedUpvotes = feedbacks.find((item) => {
+      if (item.id === id) {
+        return selectedUpvotes + 1;
+      }
+    });
   };
 
   function filterItem(title) {
@@ -38,8 +37,8 @@ function App() {
       <Route exact path="/login">
         <Login />
       </Route>
-      <Route exact path="/dashboard">
-        <Dashboard />
+      <Route exact path="/Comments">
+        <Comments selected={selected} />
       </Route>
       <Route exact path="/">
         <Home

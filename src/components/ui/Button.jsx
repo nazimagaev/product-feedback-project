@@ -19,7 +19,34 @@ export const GoBackStyled = styled.button`
   font-size: 14px;
   line-height: 20px;
 
-  color: #ffffff;
+  color: ${(props) => (props.selected ? "#647196" : "#fff")};
   background-color: transparent;
   border: none;
+  cursor: pointer;
+`;
+
+export const EditFeedbackComment = styled.button`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #f2f4fe;
+  background: #4661e6;
+  border-radius: 10px;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+`;
+
+export const PostComment = styled.button`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #f2f4fe;
+  background: #ad1fea;
+  border-radius: 10px;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
 `;

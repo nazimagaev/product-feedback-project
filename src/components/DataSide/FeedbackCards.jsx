@@ -8,7 +8,7 @@ import { buttonData } from "../../constants/contants";
 export const FeedbackCardsStyled = styled.div`
   background: #ffffff;
   border-radius: 10px;
-  width: 825px;
+  width: 100%;
   height: 151px;
   margin-top: 24px;
   padding: 30px;
@@ -98,17 +98,14 @@ export const CommentContainer = styled.div`
 `;
 
 function FeedbackCards({ feedbacks, increaseUpvotes }) {
-  const [count, setCount] = useState(0);
- 
+  // const [count, setCount] = useState(0);
 
   return (
     <>
       {feedbacks.map((item) => {
         return (
           <FeedbackCardsStyled key={item.id}>
-            <UpvotesContainer
-              onClick={() => increaseUpvotes(item.id)}
-            >
+            <UpvotesContainer onClick={() => increaseUpvotes(item.id)}>
               <img src={upArrow} alt="arrow" />
               <h2>{item.upvotes}</h2>
             </UpvotesContainer>

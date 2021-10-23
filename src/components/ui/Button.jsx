@@ -50,3 +50,16 @@ export const PostComment = styled.button`
   border: none;
   cursor: pointer;
 `;
+
+export const ReplyButton = styled.button`
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 19px;
+  color: #4661e6;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`;
